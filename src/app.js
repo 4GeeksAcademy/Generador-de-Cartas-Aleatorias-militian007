@@ -1,11 +1,32 @@
-import "bootstrap";
-import "./style.css";
+// Definimos la función para que sea reutilizable
+const generateCard = () => {
+  let suits = ["heart", "diamond", "spade", "club"];
+  let values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+  
+  let icons = {
+    heart: "♥",
+    diamond: "♦",
+    spade: "♠",
+    club: "♣"
+  };
 
+  let randomSuit = suits[Math.floor(Math.random() * suits.length)];
+  let randomValue = values[Math.floor(Math.random() * values.length)];
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+  let card = document.getElementById("card");
 
+  // IMPORTANTE: Limpiamos las clases anteriores para que no se mezclen colores
+  card.className = "card " + randomSuit;
+
+  document.querySelector(".number").innerHTML = randomValue;
+  document.querySelector(".top-suit").innerHTML = icons[randomSuit];
+  document.querySelector(".bottom-suit").innerHTML = icons[randomSuit];
+};
+
+// 1. Ejecutar cuando la página carga por primera vez
 window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
+  generateCard();
+
+  // 2. Ejecutar cuando se hace clic en el botón
+  document.getElementById("generate-btn").addEventListener("click", generateCard);
 };

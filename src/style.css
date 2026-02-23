@@ -1,5 +1,64 @@
-@import "bootstrap/dist/css/bootstrap.min.css";
 
-body{
-    background: white;
+body {
+  background-color: #07f165; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.card {
+  background-color: white;
+  height: 450px;
+  width: 300px;
+  border-radius: 15px;
+  position: relative; 
+  font-family: Arial, sans-serif;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
+}
+
+
+.top-suit {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 80px;
+}
+
+.bottom-suit {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  font-size: 80px;
+  transform: rotate(180deg); 
+}
+
+
+.number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  font-size: 150px;
+}
+
+
+.heart, .diamond { color: red; }
+.spade, .club { color: black; }
+
+#generate-btn {
+  padding: 10px 20px;
+  font-size: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  background-color: white;
+  transition: 0.3s;
+  
+}
+
+#generate-btn:hover {
+  background-color: #b406e9;
+  transform: scale(1.05);
 }
